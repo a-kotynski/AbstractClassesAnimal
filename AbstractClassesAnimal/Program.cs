@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 //https://www.exercisescsharp.com/oop/abstract-classes
 namespace AbstractClassesAnimal
 {
-    abstract class Animal
+    public abstract class Animal
     {
-        public abstract string Name { get; set; }
+        public virtual string Name { get; set; }
         public string SetName(string name)
         {
             this.Name = name;
@@ -18,14 +18,15 @@ namespace AbstractClassesAnimal
         {
             return Name;
         }
-        public abstract void Eat()
+        public virtual void Eat()
         {
             
         }
     }
     public class Dog : Animal
     {
-        public void Eat()
+        public override string Name { get; set; }
+        public override void Eat()
         {
             Console.WriteLine("The dog is eating.");
         }
